@@ -2,6 +2,7 @@ import {getPosts} from "../../services/api";
 import {Post} from "../../components/post/Post";
 import {useEffect, useState} from "react";
 import {Loader} from "../../components/icons/Loader";
+import {Header} from "../../components/header/Header";
 
 export const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -19,15 +20,17 @@ export const Home = () => {
 
     return (
         <>
-            <h1>Мой блог</h1>
-            <div className={'posts'}>
-                {posts.length !== 0 ? (
-                    posts.map((post) => (
-                        <Post key={post.id} id={post.id} description={post.body} title={post.title} userId={post.userId}/>
-                    ))
-                ) : <Loader/>}
+            <Header/>
+            <div className={'blog wrapper'}>
+                <h1>Мой блог</h1>
+                <div className={'posts'}>
+                    {posts.length !== 0 ? (
+                        posts.map((post) => (
+                            <Post key={post.id} id={post.id} description={post.body} title={post.title} userId={post.userId}/>
+                        ))
+                    ) : <Loader/>}
+                </div>
             </div>
         </>
-
     )
 }
