@@ -2,7 +2,8 @@ import avatar from '../../assets/images/avatar.png'
 import './post.scss'
 import {useState} from "react";
 import {getComments} from "../../services/api";
-import loading from '../../assets/images/Loading_icon.gif'
+import {Link} from "react-router-dom";
+import {Loader} from "../icons/Loader";
 
 export const Post = ({id, title, description, userId}) => {
     const [comments, setComments] = useState([]);
@@ -24,9 +25,9 @@ export const Post = ({id, title, description, userId}) => {
         <div className={'post'} key={id}>
             <h3 className="title">{title}</h3>
             <div className="post-content">
-                <a href={'#'} className="wrapper-image">
+                <Link className={'wrapper-image'} to={`userInfo/${userId}`}>
                     <img src={avatar} alt=""/>
-                </a>
+                </Link>
                 <div className="description">{description}</div>
             </div>
             <p
@@ -38,13 +39,13 @@ export const Post = ({id, title, description, userId}) => {
             {isOpenComments && (
                 comments.length !== 0 ? (
                     comments.map((comment) => (
-                        <div className={'comment'}>
+                        <div className={'comment'} key={comment.id}>
                             <span className={'comment-email'}>{comment.email}</span>
                             <p className={'comment-description'}>{comment.body}</p>
                             <p className={'line'}> - </p>
                         </div>
                     ))
-                    ) : <img src={loading} alt=""/>
+                    ) : <Loader />
             )}
         </div>
     )

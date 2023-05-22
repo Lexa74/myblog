@@ -1,7 +1,7 @@
 import {getPosts} from "../../services/api";
-import {Post} from "./Post";
+import {Post} from "../../components/post/Post";
 import {useEffect, useState} from "react";
-import loading from '../../assets/images/Loading_icon.gif'
+import {Loader} from "../../components/icons/Loader";
 
 export const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -9,7 +9,6 @@ export const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await getPosts();
-            console.log(result)
             //Специальная задержка
             setInterval(() => {
                 setPosts(result)
@@ -20,14 +19,13 @@ export const Home = () => {
 
     return (
         <>
-            <h1>My blog</h1>
+            <h1>Мой блог</h1>
             <div className={'posts'}>
                 {posts.length !== 0 ? (
                     posts.map((post) => (
-                        <Post id={post.id} description={post.body} title={post.title} userId={post.userId}/>
+                        <Post key={post.id} id={post.id} description={post.body} title={post.title} userId={post.userId}/>
                     ))
-                ) : (<img src={loading} alt=""/>)}
-
+                ) : <Loader/>}
             </div>
         </>
 

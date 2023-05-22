@@ -23,3 +23,11 @@ export const getComments = ({id}) => {
         })
         .catch(err => console.log(err))
 }
+
+export const getUser = ({id}) => {
+    return axios.get(`${URL}/users/${id}`)
+        .then((res) => {
+            return res.data
+        })
+        .catch(err => console.log(err))
+}

@@ -1,0 +1,13 @@
+.userInfo {
+  .personal-data {
+    border: 1px solid #0d6efd;
+    padding: 10px;
+  }
+  .user-post-content {
+    &:last-child {
+      .line {
+        display: none;
+      }
+    }
+  }
+}
