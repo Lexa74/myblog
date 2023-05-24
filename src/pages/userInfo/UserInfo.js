@@ -21,7 +21,7 @@ export const UserInfo = () => {
             }, 500)
         }
         fetchData();
-    },[])
+    },[userID])
     return (
         <>
             <Header/>
