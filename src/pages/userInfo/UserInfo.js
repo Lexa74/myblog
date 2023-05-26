@@ -15,7 +15,7 @@ export const UserInfo = () => {
             const posts = await getPosts();
             const userData = await getUser({id: userID});
             const resultFilterPost = posts.filter(post => post.userId === +userID)
-            setInterval(() => {
+            setTimeout(() => {
                 setPostsOfUser(resultFilterPost)
                 setUserInfo(userData)
             }, 500)

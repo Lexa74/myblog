@@ -14,7 +14,7 @@ export const Post = ({id, title, description, userId}) => {
 
         const fetchData = async () => {
             const result = await getComments({id});
-            setInterval(() => {
+            setTimeout(() => {
                 setComments(result)
             }, 500)
         }

@@ -1,0 +1,39 @@
+.table {
+  background: #FFFFFF;
+
+  .table-header {
+    display: flex;
+    text-align: center;
+    background: #F7F7FC;
+  }
+
+  .cell-size {
+    padding: 10px 20px;
+    width: 100%;
+
+    &.small {
+      width: 100px;
+    }
+  }
+
+  .table-row {
+    display: flex;
+  }
+
+  .title-accordion {
+    background: #E1E1FB;;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .table-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &.active {
+      max-height: 2000px;
+      transition: max-height 0.5s ease;
+    }
+  }
+}

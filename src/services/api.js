@@ -10,6 +10,14 @@ export const getPosts = () => {
         .catch(err => console.log(err))
 }
 
+export const getPostsPage = (page) => {
+    return axios.get(`${URL}/posts?_page=${page}`)
+        .then((res) => {
+            return res.data
+        })
+        .catch(err => console.log(err))
+}
+
 export const getComments = ({id}) => {
     return axios.get(`${URL}/comments?postId=${id}`)
         .then((res) => {

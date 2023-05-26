@@ -1,0 +1,29 @@
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+.link {
+  color: black;
+}
+
+.App {
+  text-align: left;
+  padding-top: 50px;
+}
+
+.wrapper {
+  width: 1366px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
