@@ -1,11 +1,12 @@
-export const TableHeader = () => {
+export const TableHeader = ({titles}) => {
     return (
         <>
             <div className="table-header">
-                <div className="table-header__title cell-size small">ID</div>
-                <div className="table-header__title cell-size">Задача</div>
-                <div className="table-header__title cell-size">Статус</div>
-                <div className="table-header__title cell-size">Описание</div>
+                {titles.map((titleColumns, index) => (
+                    <div key={index} className={`table-header__title cell-size ${titleColumns.size}`}>
+                        {titleColumns.title}
+                    </div>
+                ))}
             </div>
         </>
     )

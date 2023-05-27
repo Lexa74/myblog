@@ -5,6 +5,10 @@
     display: flex;
     text-align: center;
     background: #F7F7FC;
+
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
   }
 
   .cell-size {
@@ -13,11 +17,28 @@
 
     &.small {
       width: 100px;
+
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
     }
   }
 
   .table-row {
     display: flex;
+
+    &__cell {
+      display: flex;
+
+      &_content {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+      border-bottom: 1px solid #E1E1FB;
+    }
   }
 
   .title-accordion {
@@ -28,12 +49,26 @@
 
   .table-section {
     max-height: 0;
-    overflow: hidden;
+    overflow-y: hidden;
     transition: max-height 0.3s ease;
 
     &.active {
       max-height: 2000px;
       transition: max-height 0.5s ease;
+
+      @media screen and (max-width: 991px) {
+        max-height: 3500px;
+      }
+    }
+  }
+
+  .row-title-mobile {
+    margin-right: 10px;
+    width: 100px;
+    display: none;
+
+    @media screen and (max-width: 991px) {
+      display: block;
     }
   }
 }

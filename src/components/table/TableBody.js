@@ -1,7 +1,7 @@
 import {TableSection} from "./TableSection";
 import {useState} from "react";
 
-export const TableBody = ({data, titlesMenu, paramsAnimateAccordion}) => {
+export const TableBody = ({data, titlesMenu, paramsAnimateAccordion, titlesColumns}) => {
     const [activeSections, setActiveSections] = useState(paramsAnimateAccordion);
     const handleSectionClick = (id) => {
         setActiveSections((prevActiveSections) => {
@@ -19,6 +19,7 @@ export const TableBody = ({data, titlesMenu, paramsAnimateAccordion}) => {
             {titlesMenu.map((title, index) => (
                 <TableSection
                     key={index}
+                    titlesColumnsMobile={titlesColumns}
                     title={title}
                     data={data}
                     isOpen={activeSections[index].isActive}

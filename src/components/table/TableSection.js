@@ -1,7 +1,7 @@
 import {Arrow} from "../icons/Arrow";
 import {TableRow} from "./TableRow";
 
-export const TableSection = ({title, data, isOpen, onClick}) => {
+export const TableSection = ({title, data, isOpen, onClick, titlesColumnsMobile}) => {
     const handleClick = () => {
         onClick();
     };
@@ -12,8 +12,9 @@ export const TableSection = ({title, data, isOpen, onClick}) => {
                 <Arrow addClass={isOpen ? "active" : ""} />
             </div>
             <div className={`table-section ${isOpen ? "active" : ""}`}>
-                <TableRow data={data} />
+                <TableRow data={data} titleMobile={titlesColumnsMobile}/>
             </div>
+
         </>
     );
 };
