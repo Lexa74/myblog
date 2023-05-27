@@ -8,7 +8,7 @@ export const Burger = ({width, height, color = '#000000'}) => {
             y="0px"
             width={width}
             height={height}
-            viewBox="0 0 122.879 103.609" enable-background="new 0 0 122.879 103.609"
+            viewBox="0 0 122.879 103.609" enableBackground="new 0 0 122.879 103.609"
             fill={color}>
             <g>
             <path

@@ -38,6 +38,9 @@ export const Header = () => {
                     <Nav.Item>
                         <Nav.Link eventKey={'about'} href="/about" active={location.pathname === '/about'}>Обо мне</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey={'tasks'} href="/tasks" active={location.pathname === '/tasks'}>Задачи</Nav.Link>
+                    </Nav.Item>
                 </Nav>
             </div>
         </header>

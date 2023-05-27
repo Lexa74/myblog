@@ -9,12 +9,12 @@ export const Post = ({id, title, description, userId}) => {
     const [comments, setComments] = useState([]);
     const [isOpenComments, setIsOpenComments] = useState(false)
 
-    const clickHandlerComments = (id) => {
+    const getCommentsUserId = (id) => {
         setIsOpenComments(!isOpenComments);
 
         const fetchData = async () => {
             const result = await getComments({id});
-            setInterval(() => {
+            setTimeout(() => {
                 setComments(result)
             }, 500)
         }
@@ -32,7 +32,7 @@ export const Post = ({id, title, description, userId}) => {
             </div>
             <p
                 className={'comments'}
-                onClick={() => clickHandlerComments(userId)}
+                onClick={() => getCommentsUserId(userId)}
             >
                 {!isOpenComments ? 'Коментарии' : 'Скрыть'}
             </p>
