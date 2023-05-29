@@ -2,7 +2,7 @@ import {TableHeader} from "./TableHeader";
 import {TableBody} from "./TableBody";
 import './table.scss'
 
-export const TableContainer = ({data, titlesMenu, activeSection, titlesColumns}) => {
+export const TableContainer = ({titlesMenu, activeSection, titlesColumns, children}) => {
     const paramsAnimateAccordion = [];
     for (let i = 1; i <= titlesMenu.length; i++) {
         if(i === activeSection) {
@@ -15,7 +15,7 @@ export const TableContainer = ({data, titlesMenu, activeSection, titlesColumns})
     return (
         <div className={'table'}>
             <TableHeader titles={titlesColumns}/>
-            <TableBody data={data} titlesMenu={titlesMenu} paramsAnimateAccordion={paramsAnimateAccordion} titlesColumns={titlesColumns}/>
+            <TableBody titlesMenu={titlesMenu} paramsAnimateAccordion={paramsAnimateAccordion} row={children}/>
         </div>
     )
 }

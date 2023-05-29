@@ -4,17 +4,13 @@ import {Header} from "../../components/header/Header";
 import {useEffect, useState} from "react";
 import {getPostsPage} from "../../services/api";
 import {TableContainer} from "../../components/table/TableContainer";
+import {TableRowAccordion} from "../../components/table/TableRowAccordion";
 
 export const Tasks = () => {
     const [tasks, setTasks] = useState([])
     const titlesMenu = ['Выполненные задачи', 'Задачи на сегодня', 'Предстоящие задачи'];
 
-    const titlesColumns = [
-        {title: 'ID', size: 'small'},
-        {title: 'Задача', size: ''},
-        {title: 'Статус', size: ''},
-        {title: 'Описание', size: ''},
-    ]
+    const titlesColumns = ['ID', 'Задача', 'Статус', 'Описание']
 
     useEffect(() => {
         const fetchData = async () => {
@@ -32,7 +28,9 @@ export const Tasks = () => {
             <Header/>
             <div className="table-container wrapper">
                 <h1 className="title">Задачи</h1>
-                <TableContainer data={tasks} titlesMenu={titlesMenu} activeSection={2} titlesColumns={titlesColumns}/>
+                <TableContainer titlesMenu={titlesMenu} activeSection={2} titlesColumns={titlesColumns}>
+                    <TableRowAccordion data={tasks} titlesMenu={titlesMenu}/>
+                </TableContainer>
             </div>
         </>
     )

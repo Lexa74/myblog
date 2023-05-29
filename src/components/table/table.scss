@@ -6,6 +6,16 @@
     text-align: center;
     background: #F7F7FC;
 
+    &__title {
+      &:first-child {
+        width: 100px;
+
+        @media screen and (max-width: 991px) {
+          width: 100%;
+        }
+      }
+    }
+
     @media screen and (max-width: 991px) {
       display: none;
     }
@@ -15,7 +25,7 @@
     padding: 10px 20px;
     width: 100%;
 
-    &.small {
+    &:first-child {
       width: 100px;
 
       @media screen and (max-width: 991px) {

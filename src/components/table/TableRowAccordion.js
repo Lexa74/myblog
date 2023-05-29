@@ -1,24 +1,23 @@
 import {CustomSelect} from "../UI/CustomSelect";
 import {Loader} from "../icons/Loader";
 
-
-export const TableRow = ({data, titleMobile}) => {
+export const TableRowAccordion = ({data, titlesMenu}) => {
     return (
         <>
             {data.length !== 0 ? (
                 <>
-                    {data.map((row) => (
-                        <div className={'table-row'} key={row.id}>
-                            <div className="table-row__cell cell-size small">
-                                <div className={'row-title-mobile'}>{titleMobile[0].title}</div>
-                                <div className="table-row__cell_content">{row.id}</div>
+                    {data.map((elemData) => (
+                        <div className={'table-row'} key={elemData.id}>
+                            <div className="table-row__cell cell-size">
+                                <div className={'row-title-mobile'}>{titlesMenu[0]}</div>
+                                <div className="table-row__cell_content">{elemData.id}</div>
                             </div>
                             <div className="table-row__cell cell-size">
-                                <div className={'row-title-mobile'}>{titleMobile[1].title}</div>
-                                <div className="table-row__cell_content">{row.title}</div>
+                                <div className={'row-title-mobile'}>{titlesMenu[1]}</div>
+                                <div className="table-row__cell_content">{elemData.title}</div>
                             </div>
                             <div className="table-row__cell cell-size">
-                                <div className={'row-title-mobile'}>{titleMobile[2].title}</div>
+                                <div className={'row-title-mobile'}>{titlesMenu[2]}</div>
                                 <CustomSelect
                                     label={'Статус'}
                                     optionsVal={['done', 'pause', 'inProgress']}
@@ -27,8 +26,8 @@ export const TableRow = ({data, titleMobile}) => {
                                 />
                             </div>
                             <div className="table-row__cell cell-size">
-                                <div className={'row-title-mobile'}>{titleMobile[3].title}</div>
-                                <div className="table-row__cell_content">{row.body}</div>
+                                <div className={'row-title-mobile'}>{titlesMenu[3]}</div>
+                                <div className="table-row__cell_content">{elemData.body}</div>
                             </div>
                         </div>
                     ))}

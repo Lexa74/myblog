@@ -3,8 +3,8 @@ export const TableHeader = ({titles}) => {
         <>
             <div className="table-header">
                 {titles.map((titleColumns, index) => (
-                    <div key={index} className={`table-header__title cell-size ${titleColumns.size}`}>
-                        {titleColumns.title}
+                    <div key={index} className={`table-header__title cell-size`}>
+                        {titleColumns}
                     </div>
                 ))}
             </div>
