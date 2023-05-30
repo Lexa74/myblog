@@ -1,13 +1,12 @@
 import {Burger} from "../icons/Burger";
 import './header.scss'
-import Nav from 'react-bootstrap/Nav';
 import {useState} from "react";
-import {useLocation} from "react-router-dom";
 import avatar from '../../assets/images/myAvatar.jpg'
+import {Link} from "react-router-dom";
 
 export const Header = () => {
     const [isOpenMenu, setInOpenMenu] = useState(false);
-    const location = useLocation()
+    const location = window.location
 
     const clickHandlerBurger = () => {
         setInOpenMenu(!isOpenMenu)
@@ -29,19 +28,11 @@ export const Header = () => {
                     <span>Алексей</span>
                     <span>lexaqwas74@gmail.com</span>
                 </div>
-                <Nav
-                    className={`df flex-column`}
-                >
-                    <Nav.Item>
-                        <Nav.Link eventKey={'/'} href="/" active={location.pathname === '/'}>Список постов</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey={'about'} href="/about" active={location.pathname === '/about'}>Обо мне</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey={'tasks'} href="/tasks" active={location.pathname === '/tasks'}>Задачи</Nav.Link>
-                    </Nav.Item>
-                </Nav>
+                <nav className={'navigation-links'}>
+                    <Link to={'/'} className={`nav-link ${location.pathname === '/' && 'active'}`}>Список постов</Link>
+                    <Link to={'/about'} className={`nav-link ${location.pathname === '/about' && 'active'}`}>Обо мне</Link>
+                    <Link to={'/tasks'} className={`nav-link ${location.pathname === '/tasks' && 'active'}`}>Задачи</Link>
+                </nav>
             </div>
         </header>
     )
