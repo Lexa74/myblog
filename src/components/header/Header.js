@@ -3,6 +3,7 @@ import './header.scss'
 import {useState} from "react";
 import avatar from '../../assets/images/myAvatar.jpg'
 import {Link, useLocation} from "react-router-dom";
+import {linkList} from "../../navigation/navLinkList";
 
 export const Header = () => {
     const [isOpenMenu, setInOpenMenu] = useState(false);
@@ -29,9 +30,11 @@ export const Header = () => {
                     <span>lexaqwas74@gmail.com</span>
                 </div>
                 <nav className={'navigation-links'}>
-                    <Link to={'/'} className={`nav-link ${location.pathname === '/' && 'active'}`}>Список постов</Link>
-                    <Link to={'/about'} className={`nav-link ${location.pathname === '/about' && 'active'}`}>Обо мне</Link>
-                    <Link to={'/tasks'} className={`nav-link ${location.pathname === '/tasks' && 'active'}`}>Задачи</Link>
+                    {linkList.map((link, index) => (
+                        <Link key={index} to={link.href} className={`nav-link ${location.pathname === link.href && 'active'}`}>
+                            {link.title}
+                        </Link>
+                    ))}
                 </nav>
             </div>
         </header>
