@@ -2,11 +2,11 @@ import {Burger} from "../icons/Burger";
 import './header.scss'
 import {useState} from "react";
 import avatar from '../../assets/images/myAvatar.jpg'
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 export const Header = () => {
     const [isOpenMenu, setInOpenMenu] = useState(false);
-    const location = window.location
+    const location = useLocation()
 
     const clickHandlerBurger = () => {
         setInOpenMenu(!isOpenMenu)
