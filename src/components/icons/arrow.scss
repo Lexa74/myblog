@@ -1,6 +1,8 @@
 .arrow-icon {
   transition: .3s all;
   transform: rotate(0);
+  position: relative;
+  top: 5px;
 
   &.active {
     transform: rotate(180deg);

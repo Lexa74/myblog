@@ -1,0 +1,55 @@
+.weather-city {
+  margin-bottom: 20px;
+}
+
+.weather-container {
+  border: 1px solid #0d6efd;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  &__now, &__date {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__time, &__temperature {
+    width: 100px;
+  }
+
+  &__time {
+    margin-bottom: 10px;
+  }
+}
+
+.load-more {
+  cursor: pointer;
+  text-align: center;
+}
+
+.weather-days {
+  max-height: 0;
+  transition: .3s all;
+  overflow: hidden;
+
+  &.open {
+    max-height: 2000px;
+  }
+}
+
+.change-city {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+  &__input {
+    display: flex;
+  }
+}
