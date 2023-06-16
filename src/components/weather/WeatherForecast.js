@@ -48,6 +48,7 @@ export const WeatherForecast = () => {
                                    onKeyPress={(e) => e.key === 'Enter' && handlerCity()}
                                    onChange={(e) => setChangeCityInput(e.target.value)}
                                    placeholder={'Введите город'}
+                                   className={'input-city'}
                             />
                             <button onClick={handlerCity} className={'btn blue'}>Применить</button>
                         </div>

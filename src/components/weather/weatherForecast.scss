@@ -14,10 +14,15 @@
 
   &__wrapper {
     display: flex;
+    overflow-x: auto;
   }
 
   &__time, &__temperature {
     width: 100px;
+
+    @media (max-width: 991px) {
+      width: 60px;
+    }
   }
 
   &__time {
@@ -28,6 +33,7 @@
 .load-more {
   cursor: pointer;
   text-align: center;
+  margin-top: 0;
 }
 
 .weather-days {
@@ -45,11 +51,28 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
   &__buttons {
     display: flex;
     gap: 10px;
+
+    @media (max-width: 475px) {
+      .btn {
+        min-width: auto;
+      }
+    }
   }
   &__input {
     display: flex;
+
+    .input-city {
+      @media (max-width: 991px) {
+        width: 100%;
+        min-width: 50px;
+      }
+    }
   }
 }
