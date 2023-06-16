@@ -1,3 +1,8 @@
+.App {
+  text-align: left;
+  padding-top: 50px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,19 +11,37 @@ img {
   width: 100%;
 }
 
-.link {
-  color: black;
+h1, .h1 {
+  font-size: 48px;
+  line-height: 58px;
+
+  @media (max-width: 1024px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  @media (max-width: 475px) {
+    font-size: 23px;
+    line-height: 30px;
+  }
 }
 
-.App {
-  text-align: left;
-  padding-top: 50px;
+.link {
+  color: black;
 }
 
 .wrapper {
   max-width: 1366px;
   margin: 0 auto;
   padding: 0 10px;
+
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 }
 
 a {

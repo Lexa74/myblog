@@ -1,7 +1,7 @@
 import {CustomSelect} from "../UI/CustomSelect";
 import {Loader} from "../icons/Loader";
 
-export const TableRowAccordion = ({data, titlesMenu}) => {
+export const TableRowAccordion = ({data, titlesColumnsMobile}) => {
     return (
         <>
             {data.length !== 0 ? (
@@ -9,15 +9,15 @@ export const TableRowAccordion = ({data, titlesMenu}) => {
                     {data.map((elemData) => (
                         <div className={'table-row'} key={elemData.id}>
                             <div className="table-row__cell cell-size">
-                                <div className={'row-title-mobile'}>{titlesMenu[0]}</div>
+                                <div className={'row-title-mobile'}>{titlesColumnsMobile[0]}</div>
                                 <div className="table-row__cell_content">{elemData.id}</div>
                             </div>
                             <div className="table-row__cell cell-size">
-                                <div className={'row-title-mobile'}>{titlesMenu[1]}</div>
+                                <div className={'row-title-mobile'}>{titlesColumnsMobile[1]}</div>
                                 <div className="table-row__cell_content">{elemData.title}</div>
                             </div>
                             <div className="table-row__cell cell-size">
-                                <div className={'row-title-mobile'}>{titlesMenu[2]}</div>
+                                <div className={'row-title-mobile'}>{titlesColumnsMobile[2]}</div>
                                 <CustomSelect
                                     label={'Статус'}
                                     optionsVal={['done', 'pause', 'inProgress']}
@@ -26,7 +26,7 @@ export const TableRowAccordion = ({data, titlesMenu}) => {
                                 />
                             </div>
                             <div className="table-row__cell cell-size">
-                                <div className={'row-title-mobile'}>{titlesMenu[3]}</div>
+                                <div className={'row-title-mobile'}>{titlesColumnsMobile[3]}</div>
                                 <div className="table-row__cell_content">{elemData.body}</div>
                             </div>
                         </div>

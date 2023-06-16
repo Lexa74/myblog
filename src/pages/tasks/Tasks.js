@@ -29,7 +29,7 @@ export const Tasks = () => {
             <div className="table-container wrapper">
                 <h1 className="title">Задачи</h1>
                 <TableContainer titlesMenu={titlesMenu} activeSection={2} titlesColumns={titlesColumns}>
-                    <TableRowAccordion data={tasks} titlesMenu={titlesMenu}/>
+                    <TableRowAccordion data={tasks} titlesColumnsMobile={titlesColumns}/>
                 </TableContainer>
             </div>
         </>
